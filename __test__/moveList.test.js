@@ -1,4 +1,5 @@
 const { movieWatched } = require('../functions/movieWatched')
+const { watchedMessage } = require('../functions/watchedMessage')
 
 const { Builder, Capabilities } = require('selenium-webdriver')
 
@@ -19,4 +20,8 @@ afterAll(async () => {
 
 test('Movie title should display with strikethough when clicked', async () => {
     await movieWatched(driver)
+})
+
+test('When movie title is clicked, message "movie watched" will display', async () => {
+    await watchedMessage(driver)
 })
